@@ -1,0 +1,70 @@
+.modal-bg {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.293);
+}
+
+.modal {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(255, 255, 255);
+    border-radius: 16px;
+    padding: 10px
+}
+
+.msg-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.error-message-card {
+    padding: 5px;
+    width: 200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.164);
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px black;
+}
+
+p {
+    margin: 0;
+}
+
+.form {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.buton-wrapper-form {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    border-style: solid;
+    border-width: 1px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(173, 194, 107, 0.164);
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px black;
+    padding: 10px;
+}
