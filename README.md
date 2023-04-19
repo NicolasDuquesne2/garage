@@ -11,7 +11,7 @@ You need get the [backend](https://github.com/NicolasDuquesne2/garage-backend)
 The app uses the default localhost:3000<br>
 The backend runs on localhost:8080
 
-1. Run the backend on your 
+1. Run the backend on your computer
 2. Run the front with the npm start command in a terminal
 3. Enjoy !
 
