@@ -35,8 +35,8 @@ function AddModal({car}) {
     }
 
     return ( 
-        <div className="modal-bg" onClick={() => close()}>
-            <div className="modal">
+        <div className="absolute w-full h-full flex flex-col justify-center items-center bg-slate-100/50" onClick={() => close()}>
+            <div className="w-fit">
                 {htmlContent}
             </div>
         </div>

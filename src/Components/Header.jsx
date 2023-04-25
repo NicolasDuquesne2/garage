@@ -3,24 +3,20 @@ function Header({page}) {
     let navContent = ""
 
     if(page === "home") {
-        navContent = <ul className="links-list">
-            <li><a className="link" href="http://localhost:3000/cars">Accéder au garage</a></li>
-        </ul>
+        navContent =  <li><a className="link" href="http://localhost:3000/cars">Accéder au garage</a></li>
     }
 
     if(page === "cars") {
-        navContent = <ul className="links-list">
-        <li><a className="link" href="http://localhost:3000/">Accéder à l'accueil</a></li>
-    </ul>
+        navContent = <li><a className="link" href="http://localhost:3000/">Accéder à l'accueil</a></li>
     }
 
     return (
-        <header className="main-header">
-            <div className="main-header-title-wrapper">
-                <a className="main-header-title" href="http://localhost:3000/">Le garage</a>
-            </div>
-            <nav className="main-nav">
-                {navContent}
+        <header className="flex p-2 bg-slate-400 items-center">
+            <a className="font-semibold text-2xl p-2 text-red-700 hover:scale-105 delay-200" href="http://localhost:3000/">Le garage</a>
+            <nav className="p-2">
+                <ul className="">
+                    {navContent}
+                </ul>
             </nav>
         </header>
     )

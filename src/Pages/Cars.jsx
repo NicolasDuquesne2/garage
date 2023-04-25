@@ -36,17 +36,17 @@ function Cars() {
     let content = ""
 
     if(isLoading) {
-        content = <p id="is-loading">ça charge</p>
+        content = <p className="text-sky-600 font-semibold mx-auto w-fit text-2xl" id="is-loading">ça charge</p>
     }
 
     if(error) {
-        content = <p id="error">oups ! erreur {error.message}</p>
+        content = <p className="text-red-600 font-semibold mx-auto w-fit text-2xl" id="error">oups ! erreur {error.message}</p>
     }
 
     if (data){
 
         if (data.length === 0) {
-            content = <p>Pas de voiture à afficher</p>
+            content = <p className="text-red-600 font-semibold mx-auto w-fit text-2xl">Pas de voiture à afficher</p>
         } else {
             content = data.map((car, index) => {
                 return <Card key={`car-${index}`} car={car}/>
@@ -61,15 +61,15 @@ function Cars() {
     }
 
     return (
-        <div className="cars">
+        <div className="flex flex-col h-screen">
             <Header page="cars" />
-            <section className="cars-wrapper">
-                <h2>La liste des voitures</h2>
-                <div className="cards-wrapper">
-                {content}
+            <section className=" flex flex-col flex-1 bg-slate-200">
+                <h2 className="text-sky-600 font-bold p-2 m-2 text-3xl">La liste des voitures</h2>
+                <div className="flex-1">
+                    {content}
                 </div>
-                <div className="buton-wrapper-form">
-                    <button onClick={() => onNewCar()}>Ajouter une voiture</button>
+                <div className="">
+                    <button className="p-2 m-3 bg-blue-400 rounded-lg font-semibold text-red-800 shadow-xl hover:scale-105 delay-150" onClick={() => onNewCar()}>Ajouter une voiture</button>
                 </div>
             </section>
             <Footer />
