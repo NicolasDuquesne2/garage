@@ -1,7 +1,6 @@
 import { useStore } from "../Hooks/useStore"
 import useDeleteData from "../Hooks/useDeleteData"
 import MessageModal from "./MessagesModal"
-import "./modal.css"
 
 function DelModal({car}) {
     const setDelModalState = useStore((state) => state.setShowDelModal)

@@ -6,7 +6,6 @@ import UpdateModal from "../Components/UpdateModal"
 import Header from "../Components/Header"
 import Footer from "../Components/Footer"
 import { useStore } from "../Hooks/useStore"
-import "./pages.css"
 
 
 function Cars() {

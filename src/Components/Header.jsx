@@ -1,5 +1,3 @@
-import "./header.css"
-
 function Header({page}) {
 
     let navContent = ""

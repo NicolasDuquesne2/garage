@@ -1,4 +1,3 @@
-import "./modal.css"
 import { useStore } from "../Hooks/useStore"
 import useAddDatas from "../Hooks/useAddDatas"
 import MessageModal from "./MessagesModal";
