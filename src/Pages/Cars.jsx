@@ -13,19 +13,20 @@ function Cars() {
     const showAddModalState = useStore((state) => state.showAddModal)
     const setAddModalState = useStore((state) => state.setShowAddModal)
     const showDelModalState = useStore((state) => state.showDelModal)
-    const setDelModalState = useStore((state) => state.setShowDelModal)
     const showUpdateModal = useStore((state) => state.showUpdateModal)
     const carData = useStore((state) => state.carData)
     const setCarData = useStore((state) => state.setCarData)
     
     let modal = ""
 
+    console.log(showDelModalState);
+
     if(showAddModalState) {
         modal = <AddModal car = {carData}/>
     }
 
     if (showDelModalState) {
-        modal = <DelModal car = {carData} type="del" />
+        modal = <DelModal car = {carData} />
     }
 
     if(showUpdateModal) {
@@ -48,16 +49,15 @@ function Cars() {
         if (data.length === 0) {
             content = <p className="text-red-600 font-semibold mx-auto w-fit text-2xl">Pas de voiture à afficher</p>
         } else {
-            content = data.map((car, index) => {
+            content = <div id="cards-mosaic" className="grid grid-cols-5 gap-1">{data.map((car, index) => {
                 return <Card key={`car-${index}`} car={car}/>
-            })
+            })}</div>
         }
     }
 
     const onNewCar = () => {
-        setDelModalState(null)
         setCarData(null)
-        setAddModalState({type: "add"})
+        setAddModalState(true)
     }
 
     return (
@@ -65,7 +65,7 @@ function Cars() {
             <Header page="cars" />
             <section className=" flex flex-col flex-1 bg-slate-200">
                 <h2 className="text-sky-600 font-bold p-2 m-2 text-3xl">La liste des voitures</h2>
-                <div className="flex-1">
+                <div className="flex-1 flex justify-center  mx-auto">
                     {content}
                 </div>
                 <div className="">

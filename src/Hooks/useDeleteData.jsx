@@ -9,7 +9,7 @@ function useDeleteData() {
     })
 
     const mutation = useMutation((address) => {
-        return api.delete(address).then((response) => response)
+        return api.delete(address)
     },  {
         onSuccess: () => {
             queryClient.invalidateQueries()

@@ -7,12 +7,12 @@ import Form from "./Form";
 function AddModal({car}) {
 
     const [addDatas, mutation] = useAddDatas();
-    const setCarData = useStore((state) => state.setCarData)
-    const setModalState = useStore((state) => state.setShowAddModal)
+    const setAddModalState = useStore((state) => state.setShowAddModal)
 
+    console.log(mutation);
 
     function close() {
-        setModalState(false)
+        setAddModalState(false)
     }
 
 
@@ -21,17 +21,16 @@ function AddModal({car}) {
         const toSend = {model:form[0].value, brand: form[1].value, color: form[2].value, date: form[3].value}
 
         addDatas(toSend)
-        setCarData(null)
     }
     
     let htmlContent = <Form car={car} action={record} close={close}/>
 
     if(mutation.isError) {
-        htmlContent = <MessageModal message={"La voiture n'a pas pu être ajoutée"} action={close}/>
+        htmlContent = <MessageModal message={"La voiture n'a pas pu être ajoutée"} action={close} state="fail"/>
     }
 
     if(mutation.isSuccess) {
-        htmlContent = <MessageModal message={"La voiture a été bien ajoutée"} action={close}/>
+        htmlContent = <MessageModal message={"La voiture a été bien ajoutée"} action={close} state="success" />
     }
 
     return ( 
