@@ -9,8 +9,6 @@ function AddModal({car}) {
     const [addDatas, mutation] = useAddDatas();
     const setAddModalState = useStore((state) => state.setShowAddModal)
 
-    console.log(mutation);
-
     function close() {
         setAddModalState(false)
     }

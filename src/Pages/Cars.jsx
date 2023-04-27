@@ -19,7 +19,6 @@ function Cars() {
     
     let modal = ""
 
-    console.log(showDelModalState);
 
     if(showAddModalState) {
         modal = <AddModal car = {carData}/>
@@ -49,7 +48,7 @@ function Cars() {
         if (data.length === 0) {
             content = <p className="text-red-600 font-semibold mx-auto w-fit text-2xl">Pas de voiture à afficher</p>
         } else {
-            content = <div id="cards-mosaic" className="grid grid-cols-5 gap-1">{data.map((car, index) => {
+            content = <div id="cards-mosaic" className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 gap-1 p-4">{data.map((car, index) => {
                 return <Card key={`car-${index}`} car={car}/>
             })}</div>
         }
@@ -61,15 +60,15 @@ function Cars() {
     }
 
     return (
-        <div className="flex flex-col h-screen">
+        <div className="flex flex-col h-screen bg-slate-200">
             <Header page="cars" />
-            <section className=" flex flex-col flex-1 bg-slate-200">
-                <h2 className="text-sky-600 font-bold p-2 m-2 text-3xl">La liste des voitures</h2>
-                <div className="flex-1 flex justify-center  mx-auto">
-                    {content}
-                </div>
+            <section className=" flex flex-col flex-1 bg-slate-200 max-w-screen-2xl mx-auto">
+                <h2 className="text-sky-600 font-bold p-2 m-2 text-2xl sm:text-3xl">La liste des voitures</h2>
                 <div className="">
                     <button className="p-2 m-3 bg-blue-400 rounded-lg font-semibold text-red-800 shadow-xl hover:scale-105 delay-150" onClick={() => onNewCar()}>Ajouter une voiture</button>
+                </div>
+                <div className="flex-1 flex justify-center  mx-auto">
+                    {content}
                 </div>
             </section>
             <Footer />
